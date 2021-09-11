@@ -21,5 +21,3 @@ print('''
 Element: %s(%s)
 Atomic weight: %s
 Group: %s''' % (elements[userInput.lower()][0], elements[userInput.lower()][1], elements[userInput.lower()][2], elements[userInput.lower()][3]))
-    
-    # elements[userInput.lower()][0])
