@@ -4,6 +4,11 @@ userNumber = int(input("Enter the number to go up to: "))
 
 #Task 2 - complete the for loop below
 for number in range(1,userNumber+1):
-  #Task 3 - What condition should be entered after the or
-  if number % number == 0 or number % 1 == 1:
-    print(number)
+    primeNumber = True
+    
+    for i in range(2, number):
+        if number % i == 0:
+            primeNumber = False
+            break
+    if primeNumber:
+        print(number)
