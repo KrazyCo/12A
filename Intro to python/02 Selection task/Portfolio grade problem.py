@@ -29,15 +29,19 @@ total = analysis + design + implementation + evaluation
 if total < 2:
   grade = "U"
   toNextGrade = 2 - total
-for i in range(len(grades)):
-  #print('i is "%s" and grades[i] is "%s"' % (i, grades[i]))
-  if total < grades[i]:
-    grade = str(i)
-    toNextGrade = grades[i] - total
-    break
+else:
+	for i in range(len(grades)):
+		if total < grades[i]:
+			grade = str(i)
+			toNextGrade = grades[i] - total
+			break
 #Task 3 - complete the selection statement to include the grades 2 to 9
 
 
 print("Your total mark was", total)
 #Task 4 - add the output statement to output how many marks to the next grade. 
-print("You achived grade %s, and you needed %s more marks to achive the next grade." % (grade, toNextGrade))
+
+if total == 80:
+	print("You achived grade 9")
+else:
+	print("You achived grade %s, and you needed %s more marks to achive the next grade." % (grade, toNextGrade))

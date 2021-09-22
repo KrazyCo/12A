@@ -1,4 +1,9 @@
-score = int(input("Enter your mark out of 100: "))
+while True:
+    score = int(input("Enter your mark out of 100: "))
+    if score <= 100:
+        break
+    else:
+        print("The score must be below 100")
 
 if score < 40:
     grade = "Fail"

@@ -13,7 +13,10 @@ def calculate():
             grade = str(i)
             toNextGrade = grades[i] - total
             break
-    outputText.value = "Your total mark was %s\n\nYou achived grade %s, and you needed\n%s more marks to achive the next grade." % (str(total), grade, toNextGrade)
+    if total == 80:
+        outputText.value = "Your mark was 80\n\nYou achived grade 9"
+    else:
+        outputText.value = "Your total mark was %s\n\nYou achived grade %s, and you needed\n%s more marks to achive the next grade." % (str(total), grade, toNextGrade)
 
 inputBox = Box(app, align="top", border=True)
 aBox = Box(inputBox, align="left", border=True)
