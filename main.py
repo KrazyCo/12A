@@ -1,5 +1,4 @@
 import os
-# os.system('python test2.py')
 
 mainDirectory = os.getcwd()
 
