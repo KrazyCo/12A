@@ -1,11 +1,26 @@
-# import test2
-
-exec(open("test2.py").read())
-
-# from subprocess import call
-
-# call(["python", "test2.py"])
-
-# import os
-
+import os
 # os.system('python test2.py')
+
+mainDirectory = os.getcwd()
+
+while True:
+    dirlist = os.listdir()
+    removedFiles = [".git", "poetry.lock", "pyproject.toml", "README.md", "main.py"]
+    for a in removedFiles:
+        try:
+            dirlist.remove(a)
+        except:
+            pass
+
+    for i in range(len(dirlist)):
+        print("%s: %s" % (i+1, dirlist[i]))
+    print("-1: Back to start")
+
+    userInput = int(input("Selection: "))
+    if userInput == -1:
+        os.chdir(mainDirectory)
+    elif dirlist[userInput-1].endswith(".py"):
+        os.system('python "%s"' % dirlist[userInput-1])
+    else:
+        os.chdir(dirlist[userInput-1])
+    print()
