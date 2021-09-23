@@ -3,6 +3,7 @@ nameTwo = input("Input the first name of the second person: ")
 
 vowels = "aeiou"
 consonents = "bcdfghjklmnpqrstvwxyz"
+love = "love"
 total = 0
 
 def isVowel(char):
@@ -15,7 +16,7 @@ def vowelCounter(name):
     vowelTotal = 0
     for char in name:
         for i in range(len(vowels)):
-            if char == vowels[i]:
+            if char.lower() == vowels[i]:
                 vowelTotal += 1
     return vowelTotal
 
@@ -23,19 +24,26 @@ def consonantCounter(name):
     consonantTotal = 0
     for char in name:
         for i in range(len(consonents)):
-            if char == consonents[i]:
+            if char.lower() == consonents[i]:
                 consonantTotal += 1
     return consonantTotal
+
+def containsLove(name):
+    for char in name:
+        for i in range(len(love)):
+            if char.lower() == love[i]:
+                return True
+    return False
 
 if len(nameOne) == len(nameTwo):
     total += 20
     print("Length match")
 if isVowel(nameOne[0]) and isVowel(nameTwo[0]):
     total += 10
-    print("Vowels")
+    print("Vowels start")
 elif not(isVowel(nameOne[0]) and isVowel(nameTwo[0])):
     total += 5
-    print("Consentants")
+    print("Consentants start")
 
 if vowelCounter(nameOne) == vowelCounter(nameTwo):
     total += 12
@@ -44,3 +52,9 @@ if vowelCounter(nameOne) == vowelCounter(nameTwo):
 if consonantCounter(nameOne) == consonantCounter(nameTwo):
     total += 12
     print("Consonants amount")
+
+if containsLove(nameOne) and containsLove(nameTwo):
+    total += 7
+    print("Contains love")
+
+print(total)
