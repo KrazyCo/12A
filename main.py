@@ -20,7 +20,7 @@ while True:
         os.chdir(mainDirectory)
     elif dirlist[userInput-1].endswith(".py"):
         os.system('python "%s"' % dirlist[userInput-1])
-        print("="*20)
+        print("="*50)
         print()
     else:
         os.chdir(dirlist[userInput-1])
