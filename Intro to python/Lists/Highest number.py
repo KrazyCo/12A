@@ -6,6 +6,6 @@ while True:
     number = input("Enter a number: ")
     if number.lower() == "stop":
         break
-    numbers.append(int(number)
+    numbers.append(int(number))
 
-print("The highest number is %s and the lowest number is %s" % ())
+print("The lowest number is %s and the highest number is %s" % (min(numbers), max(numbers)))
