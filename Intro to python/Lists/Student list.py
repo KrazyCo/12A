@@ -25,26 +25,39 @@ while True:
         for i in range(len(students)):
             print("%s: %s" % (i+1, students[i]))
     elif menuChoice.upper() == "UPDATE":
-        replaced = input("What is the name of the student to replace or the index of the student: ")
+        replaced = input("What is the name of the student to replace or the index of the student to update: ")
         if replaced.isnumeric():
             replacedStudent = students[int(replaced)-1]
             toReplace = input("What is the name of the student to replace %s: " % replacedStudent)
-            students[int(replaced)-1] = toReplace
-            print("Replaced %s with %s" % (replacedStudent, toReplace))
+            try:
+                students[int(replaced)-1] = toReplace
+                print("Replaced %s with %s" % (replacedStudent, toReplace))
+            except:
+                print("That student doesn't exist, enter a diffrent student")
         else:
             toReplace = input("What is the name of the student to replace %s: " % replaced)
             replacedStudent = replaced
-            students[students.index(replaced)] = toReplace
-            print("Replaced %s with %s" % (replaced, toReplace))
+            try:
+                students[students.index(replaced)] = toReplace
+                print("Replaced %s with %s" % (replaced, toReplace))
+            except:
+                print("That student doesn't exist, enter a diffrent student")
     elif menuChoice.upper() == "REMOVE":
         removed = input("What is the name of the student to replace or the index? ")
         if removed.isnumeric():
-            removedStudent = students[int(removed)-1]
-            students.pop(int(removed)-1)
+            try:
+                removedStudent = students[int(removed)-1]
+                students.pop(int(removed)-1)
+                print("Removed %s from the list" % removedStudent)
+            except:
+                print("That student doesn't exist, enter a diffrent student")
         else:
             removedStudent = removed
-            students.remove(removed)
-        print("Removed %s from the list" % removedStudent)
+            try:
+                students.remove(removed)
+                print("Removed %s from the list" % removedStudent)
+            except:
+                print("That student doesn't exist, enter a diffrent student")
     elif menuChoice.upper() == "EXIT":
         print("Exiting...")
         break
