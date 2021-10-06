@@ -18,8 +18,9 @@ class Students:
                 print("That student doesn't exist, enter a diffrent student")
         else:
             try:
+                repalacedStudent = self.studentList.index(toReplace)
                 self.studentList[self.studentList.index(toReplace)] = replaceWith
-                print("Replaced %s with %s" % (toReplace, replaceWith))
+                print("Replaced %s with %s" % (repalacedStudent, replaceWith))
             except:
                 print("That student doesn't exist, enter a diffrent student")
     
