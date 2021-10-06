@@ -1,5 +1,6 @@
 class Students:
-    studentList = ["Darin Greg", "Amelia Anaya", "Brand Diggory", "Jervis Leith", "Layla Nickolas"]
+    def __init__(self):
+        self.studentList = ["Darin Greg", "Amelia Anaya", "Brand Diggory", "Jervis Leith", "Layla Nickolas"]
 
     def addStudent(self, student):
         self.studentList.append(student)
@@ -18,7 +19,7 @@ class Students:
                 print("That student doesn't exist, enter a diffrent student")
         else:
             try:
-                repalacedStudent = self.studentList.index(toReplace)
+                repalacedStudent = self.studentList[self.studentList.index(toReplace)]
                 self.studentList[self.studentList.index(toReplace)] = replaceWith
                 print("Replaced %s with %s" % (repalacedStudent, replaceWith))
             except:
@@ -27,8 +28,16 @@ class Students:
     def removeStudent(self, toRemove):
         if toRemove.isnumeric():
             try:
+                removedStudent = self.studentList[int(toRemove)-1]
                 self.studentList.pop(int(toRemove)-1)
-                print(f"Removed {self.studentList[int(toRemove)-1]} from the list")
+                print(f"Removed {removedStudent} from the list")
+            except:
+                print("That student doesn't exist, enter a diffrent student")
+        else:
+            try:
+                removedStudent = toRemove
+                self.studentList.remove(toRemove)
+                print(f"Removed {removedStudent} from the list")
             except:
                 print("That student doesn't exist, enter a diffrent student")
 
