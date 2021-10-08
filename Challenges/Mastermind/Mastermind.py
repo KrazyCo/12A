@@ -4,7 +4,7 @@ import random
 # changed colours to letters quite late, stuck with it for var names
 
 # config variables
-guesses = 7
+guesses = 10
 colours = ["A", "B", "C", "D", "E"]
 
 guessCount = 0
@@ -51,7 +51,7 @@ MasterMind game started...''')
 # shuffling colours
 random.shuffle(colours)
 codes = colours[:4]
-print(f"codes are: {codes} (comment ln54 to remove)")
+# print(f"codes are: {codes} (comment ln54 to remove)")
 
 for i in range(guesses):
         print("----: [-] [-] [-] [-]")
@@ -98,4 +98,9 @@ while True:
 if gameWon:
     print(f"Congratulations, you guessed the letters in {guessCount} guesses!")
 else:
-    print("Uh oh, you ran out of guesses!")
+    codeString = ""
+    for code in codes:
+        codeString += f"{code}, "
+    codeString = codeString[:-2]
+    print(f'''Uh oh, you ran out of guesses!
+The correct code was {codeString}''')
