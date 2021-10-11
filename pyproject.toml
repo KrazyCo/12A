@@ -7,6 +7,7 @@ authors = ["ConorSTRICKLAN1 <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 guizero = "^1.2.0"
+Flask = "^2.0.2"
 
 [tool.poetry.dev-dependencies]
 
