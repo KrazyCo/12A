@@ -1,5 +1,7 @@
 # https://www.youtube.com/watch?v=i6xMBig-pP4&list=PLzMcBGfZo4-lp3jAExUCewBfMx3UZFkh5&ab_channel=TechWithTim
 
+# ! yeah this isnt gonna work on replit 
+
 import pygame
 pygame.init()
 
