@@ -5,31 +5,18 @@ def showItems():
 
 
 def addItem(barcode):
-    f = open(datafile, "r")
-    print(f.read())
-  # open the file to read
+    f = open(datafile, "r")         # open the file in read mode
+    found = False
+    print(f"{f.readlines()=}")
+    print(f"{barcode in f.readlines()=}")
+    print(f"{len(f.readlines())=}")
+    for i in range(len(f.readlines())):
+        print(f.readline())
 
-  # read the first line
-
-  # loop through the file till
-  # a line has been read in and a match has not been found
-
-
-        # check the barcode matched the line read in
-  
-        # if a match is found then record a match has been found
-
-        # read the next line
-        
-  # close file when file read is finished
-  
-  # if no match is found then
-
-    # open the file to append data
-
-    # write the barcode to the file
-
-    # close the file
+    # if not found:                   # if the barcode isnt already in the file
+    #     f = open(datafile, "a")     # open the file in append mode
+    #     f.write(f"\n{barcode}")     # append the barcode with a new line at the start
+    #     f.close()                   # close the file
 
 # ================================
 # MAIN CODE
