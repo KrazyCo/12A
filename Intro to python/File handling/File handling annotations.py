@@ -39,7 +39,7 @@ while True: # Main loop
       
   elif x == "NEW": # Checking if user input is new
     name = input("What is the name of your file? ") # asks user for the name of the file to create
-    myFile = openFile(name,"w") # opens the file in write mode, creating the file 
+    myFile = openFile(name,"w") # calls openFile function, opening the file in write mode, creating the file 
     myFile.close() # closes the file
     print() # prints empty line
     
