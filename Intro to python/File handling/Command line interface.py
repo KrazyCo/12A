@@ -19,17 +19,21 @@ ADD, SHOW, NEW, STOP
 
 while True:
     userInput = input("files> ").split()
-    userSelection = userInput[0].upper()
-    fileName = userInput[1]
-    message = ' '.join(userInput[2:])
-    # print(f"{userSelection = }")
-    # print(f"{fileName = }")
-    # print(f"{message = }")
+    try:
+        userSelection = userInput[0].upper()
+        fileName = userInput[1]
+        message = ' '.join(userInput[2:])
+        # print(f"{userSelection = }")
+        # print(f"{fileName = }")
+        # print(f"{message = }")
+    except:
+        pass # only 1 arg in userinput
 
     if userSelection == "ADD":
         file = openFile(fileName, "a")
         if file:
             file.write(message)
+            file.write("\n")
             file.close()
             print("Sucess\n")
     elif userSelection == "SHOW":
@@ -41,6 +45,7 @@ while True:
                 print(f"Line {lineCount}: {line.strip()}")
                 line = file.readline()
                 lineCount += 1
+                # print(f"{line = }")
             if lineCount == 1:
                 print(f"{fileName}.txt is empty")
             file.close()
