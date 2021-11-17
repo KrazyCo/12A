@@ -1,11 +1,12 @@
-def openFile(name,mode):
-  try:
-    name=name+".txt"           
-    myFile = open(name,mode)
-    return myFile               
-  except:
-    print("Error: unable to open", name)
-    return False
+def openFile(name, mode):
+    try:
+        name = name+".txt"
+        myFile = open(name, mode)
+        return myFile
+    except:
+        print("Error: unable to open", name)
+        return False
+
 
 print('''
 File editor:
