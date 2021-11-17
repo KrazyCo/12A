@@ -56,6 +56,30 @@ while True:
         file.close()
         print("Sucess\n")
 
+    elif userSelection == "COUNT":
+        file = openFile(fileName, "r")
+        if file:
+            charCount = 0
+            line = file.readline()
+            while line != "":
+                charCount += len(str(line).strip())
+                line = file.readline()
+            print(f"There are {charCount} char(s) in {fileName}.txt\n")
+            file.close()
+    
+    elif userSelection == "COUNTWORD":
+        file = openFile(fileName, "r")
+        if file:
+            wordlist = []
+            line = file.readline()
+            while line != "":
+                for i in range(len(line.strip().split())):
+                    wordlist.append(line.strip().split()[i])
+                line = file.readline()
+            wordCount = wordlist.count(message)
+            print(f"There are {wordCount} words that are \"{message}\" in {fileName}.txt\n")
+            file.close()
+
     elif userSelection == "STOP":
         break
 
