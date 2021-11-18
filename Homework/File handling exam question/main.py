@@ -6,7 +6,8 @@ def readMessage(fileName):
     file.close()
     return message
 
-print(readMessage("file.txt"))
+readmessage = readMessage("file.txt")
+print(f"{readmessage = }")
 
 
 # question 2
