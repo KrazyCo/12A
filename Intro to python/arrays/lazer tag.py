@@ -34,7 +34,7 @@ for i in range(20):
 # 20 rows (each row is the data for 1 player)
 
 totals = [0, 0]
-for item in player:
-    totals[item[0]-1] += item[1]
+for i in range(len(player)):
+    totals[player[i][0]-1] += player[i][1]
 print(f"Team 1 has {totals[0]} points and team 2 has {totals[1]} points")
 
