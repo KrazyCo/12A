@@ -25,7 +25,6 @@ def printFormattedArray(array):
             if len(str(value)) > highestLen:
                 highestLen = len(str(value))
     
-
     for row in array:
         toPrint = ""
         for value in row:
