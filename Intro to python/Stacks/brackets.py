@@ -25,7 +25,7 @@ for i in range(len(userInput)):
     elif userInput[i] == ">":
         triangleBrackets.pop()
 
-if brackets.peak() == None and curlyBrackets.peak() == None and squareBrackets.peak() == None and triangleBrackets.peak() == None:
+if brackets.peek() == None and curlyBrackets.peek() == None and squareBrackets.peek() == None and triangleBrackets.peek() == None:
     print("The string has balanced brackets!")
 else:
     print("The brackets are not balanced :(")

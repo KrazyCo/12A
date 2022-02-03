@@ -16,7 +16,7 @@ class Stack:
         self.index -= 1
         return self.stack[self.index]
 
-    def peak(self):
+    def peek(self):
         if self.index == 0:
             return
         return self.stack[self.index-1]
@@ -30,12 +30,12 @@ class Stack:
 if __name__ == "__main__":
     stack = Stack(10)
     while True:
-        userInput = str(input("0 for push, 1 for pop, 2 for peak, 3 for printStack: "))
+        userInput = str(input("0 for push, 1 for pop, 2 for peek, 3 for printStack: "))
         if userInput[0] == "0":
             stack.push(userInput[2:])
         if userInput[0] == "1":
             print(stack.pop())
         if userInput[0] == "2":
-            print(stack.peak())
+            print(stack.peek())
         if userInput[0] == "3":
             stack.printStack()
