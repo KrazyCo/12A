@@ -7,5 +7,8 @@ userInput = str(input("Enter your string: "))
 for i in range(len(userInput)):
     stringStack.push(userInput[i])
 
+outputString = ""
 for i in range(len(userInput)):
-    print(stringStack.pop())
+    outputString += stringStack.pop()
+
+print(outputString)

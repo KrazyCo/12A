@@ -6,12 +6,14 @@ class Stack:
     
     def push(self, arg):
         if self.index >= self.length:
+            print("Warning: stack full")
             return 
         self.stack[self.index] = arg
         self.index += 1
 
     def pop(self):
         if self.index == 0:
+            print("Warning: stack empty")
             return
         self.index -= 1
         return self.stack[self.index]
