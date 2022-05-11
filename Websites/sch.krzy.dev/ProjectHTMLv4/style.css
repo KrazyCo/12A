@@ -1,0 +1,20 @@
+body {
+    background-color: darkgray;
+    color: black;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+img {
+    width: 400px;
+    border: solid;
+    border-color: white;
+    border-width: 5px;
+}
+h1 {
+    font-size: 25px;
+    color: firebrick;
+}
+.achivements {
+    background-color: gray;
+    font-size: 13px;
+}
