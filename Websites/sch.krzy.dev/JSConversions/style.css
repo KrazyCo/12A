@@ -1,0 +1,24 @@
+label {
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+    width: 100px;
+    float: left;
+}
+
+label:after {
+    content: ": "
+}
+
+fieldset {
+    border: 1px solid #CCA383;
+    width: 400px;
+    background: #FFE8EF;
+    padding: 10px;
+}
+
+fieldset legend {
+    background: #CCA383;
+    padding: 6px;
+    font-weight: bold;
+}

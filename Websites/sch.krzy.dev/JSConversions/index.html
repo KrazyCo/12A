@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online conversion tool</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>Converter</h1>
+    <fieldset>
+        <legend>Miles and Kilometres</legend>
+
+        <label for="miles">miles</label>
+        <input type="text" id="miles" onkeyup="miles2kms()" value=1>
+
+        <button id="miles2km" onclick="miles2kms();">convert to kms</button></br>
+
+        <label for="kms">kilometers</label>
+
+        <input type="text" id="kms" onkeyup="kms2miles()" value=1.61>
+        <button id="km2miles" onclick="kms2miles()">convert to miles</button></br>
+
+    </fieldset>
+    <!-- javascript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
