@@ -27,6 +27,21 @@
         <button id="km2miles" onclick="kms2miles()">convert to miles</button></br>
 
     </fieldset>
+    <br>
+    <fieldset>
+        <legend>Pounds and Dollars</legend>
+
+        <label for="pounds">Pounds</label>
+        <input type="text" id="pounds" onkeyup="pound2dollar()">
+
+        <button id="pound2dollar" onclick="pound2dollar();">convert to dollars</button></br>
+
+        <label for="dollars">Dollars</label>
+
+        <input type="text" id="dollars" onkeyup="dollar2pound()">
+        <button id="dollar2pound" onclick="dollar2pound()">convert to pounds</button></br>
+
+    </fieldset>
     <!-- javascript -->
     <script src="script.js"></script>
 </body>
