@@ -1,0 +1,17 @@
+h1 {
+    font-family: Verdana;
+    font-size: medium;
+    color: #039;
+    background-color: #99CCFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #039;
+    width: 90%;
+    padding: 10px;
+}
+
+button {
+    width: 50%;
+    margin: 3px;
+    padding: 3px;
+}

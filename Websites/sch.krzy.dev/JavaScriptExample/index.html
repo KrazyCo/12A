@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js"></script>
+</head>
+
+<body id="main">
+    <a href="../">Home</a>
+    <h1 id="myheading">This heading will change</h1>
+    <h1>This heading will not change</h1>
+
+    <p>Clicks: <a id="clicks">0</a></p>
+
+
+    <h3>Press the buttons to change the style of the page heading</h3>
+    <p>Pressing the button below
+    <p>
+    <ol onmouseout="this.style.color='black';" onmouseover="this.style.color='red';">
+        <li>Changes background colour to blue</li>
+        <li>Changes text colour to white</li>
+        <li>Changes the font to comic-sans</li>
+        <li>Changes the alignmet to centre</li>
+        <li>Increases the count by 1</li>
+    </ol>
+
+    <button onclick="formatHeading()">Click to change myheading style</button></br>
+
+
+    <button onclick="resetHeading()">Click to reset myheading style</button>
+
+    <p> </P>
+    <p>Pressing this button removes the new styling and reverts back to the style specified in the stylesheet
+    <p>
+
+        <button onclick="changeColor()">Change Background Color</button></br>
+
+        <button onclick="changeText()">Change the text below</button></br>
+
+    <p id="output_here">hello world</p>
+
+
+
+</body>
+
+</html>
