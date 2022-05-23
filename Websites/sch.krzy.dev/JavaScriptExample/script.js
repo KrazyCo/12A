@@ -47,7 +47,19 @@ var cnum = 0;
 
 function changeColor() {
 
-    alert("You need write the code for changeColor() in js_example.js")
+    // alert("You need write the code for changeColor() in js_example.js")
+
+    var body = document.getElementById("main");
+
+    if (cnum == 0) {
+        body.style.backgroundColor = "darkRed";
+        body.style.color = "white";
+        cnum = 1
+    } else {
+        body.style.backgroundColor = "lightGray";
+        body.style.color = "darkBlue";
+        cnum = 0;
+    }
 
     // get the element with id="main"
 
@@ -65,7 +77,17 @@ var tnum = 0;
 
 function changeText() {
 
-    alert("You need write the code for changeText() in js_example.js")
+    // alert("You need write the code for changeText() in js_example.js")
+
+    toChange = document.getElementById("output_here")
+
+    if (tnum == 1) { // its this way round so it changes on first click of the button, if it was 0 then the button would need to be pressed twice for it to change
+        toChange.innerHTML = "hello world" 
+        tnum = 0
+    } else {
+        toChange.innerHTML = "goodbye world" 
+        tnum = 1
+    }
 
     // get the element with id="output_here"
 

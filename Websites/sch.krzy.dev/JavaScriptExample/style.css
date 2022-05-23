@@ -15,3 +15,7 @@ button {
     margin: 3px;
     padding: 3px;
 }
+
+.font-change:hover {
+    font-size: 20px;
+}
