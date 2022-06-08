@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>pain and suffering</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="page-body">
+    <a href="../">Home</a>
+
+    <div id="echo-div">
+        <h2>Echo text to page</h2>
+        <p>Enter text into the input box and press the echo button</p>
+        <input type="text" id="echo-in" placeholder="enter text the press the echo button">
+        <button id="echo-button" onclick="echoText()">echo</button>
+        <button id="clear-button" onclick="clearText()">clear</button>
+        <p id="echo-out"></p>
+
+    </div>
+    <hr>
+    <div id="forloop-div">
+        <h2>Print all the numbers...</h2>
+        <p>Enter a number and press the calculate button</p>
+        <input type="text" id="forloop-in" placeholder="enter a number">
+        <button id="forloop-button" onclick="printNumbers()">calculate</button>
+        <p id="forloop-out"></p>
+
+    </div>
+
+    <hr>
+    <div id="style-div">
+        <h2>Change the background color</h2>
+        <button id="background-blue" onclick="changeBackground(this)">to blue</button>
+        <button id="background-red" onclick="changeBackground(this)">to red</button>
+        <button id="background-yellow" onclick="changeBackground(this)">to yellow</button>
+
+        <h2>Change the text color</h2>
+        <button id="text-blue" onclick="changeColor(this)">to blue</button>
+        <button id="text-red" onclick="changeColor(this)">to red</button>
+        <button id="text-yellow" onclick="changeColor(this)">to yellow</button>
+
+        <h2>Change the font size</h2>
+        <button id="text-small" onclick="changeFontSize(this)">to small</button>
+        <button id="text-medium" onclick="changeFontSize(this)">to medium</button>
+        <button id="text-large" onclick="changeFontSize(this)">to large</button>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

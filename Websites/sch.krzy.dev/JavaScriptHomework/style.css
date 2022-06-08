@@ -1,0 +1,56 @@
+/*
+Colors to use
+https://99designs-blog.imgix.net/blog/wp-content/uploads/2021/01/Hemp-Green-Pale-Lemon-Oatmeal-and-Navy.jpg?auto=format&q=60&fit=max&w=930
+
+oatmeal : #f5eec2
+darker green: #416a59
+navy blue:#39395f 
+medium green: #73a24e 
+lighter green: #a9c25d
+
+*/
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f5eec2;
+    color: #416a59;
+    font-size: 20px;
+}
+
+button {
+    background-color: #416a59;
+    color: white;
+    font-size: 1em;
+    padding: 2px;
+}
+
+input {
+    font-size: 1em;
+    padding: 5px;
+}
+
+/* styling for echo example */
+#echo-in,
+#forloop-in {
+    width: 60%;
+}
+
+#echo-button,
+#forloop-button {
+    width: 20%;
+}
+
+#echo-out,
+#forloop-out {
+    width: 60%;
+    background-color: #a9c25d;
+    color: #39395f;
+    min-height: 100px;
+    padding: 5px;
+}
+
+
+
+#style-div button {
+    width: 15%;
+    font-size: 0.8em;
+}
