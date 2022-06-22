@@ -10,7 +10,6 @@
 # for item in list:
 #     print(f"{item = }")
 
-
 from random import *
 player = []
 
