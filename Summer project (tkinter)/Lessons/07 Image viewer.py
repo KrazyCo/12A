@@ -1,13 +1,15 @@
 from tkinter import *
-from turtle import pos, position
 from PIL import ImageTk,Image
+from pathlib import Path
 
 root = Tk()
 
+currDir = str(Path(__file__).parent.absolute()).replace("\\", "/")
+
 # pls ignore what the images are
-myImg1 = ImageTk.PhotoImage(Image.open("images/nob.png").resize((500, 500), Image.ANTIALIAS))
-myImg2 = ImageTk.PhotoImage(Image.open("images/oatmeal.jpg"))
-myImg3 = ImageTk.PhotoImage(Image.open("images/joe being goofy.jpg").resize((396, 496), Image.ANTIALIAS))
+myImg1 = ImageTk.PhotoImage(Image.open(currDir+"/images/nob.png").resize((500, 500), Image.ANTIALIAS))
+myImg2 = ImageTk.PhotoImage(Image.open(currDir+"/images/oatmeal.jpg"))
+myImg3 = ImageTk.PhotoImage(Image.open(currDir+"/images/joe being goofy.jpg").resize((396, 496), Image.ANTIALIAS))
 
 imageList = [myImg1, myImg2, myImg3]
 position = 0
