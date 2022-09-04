@@ -7,6 +7,16 @@ root = Tk()
 root.title("Account manager")
 root.geometry("300x250")
 
+# TODO: (! is todo, * is done (using extension to show colours))
+#* login:
+#*   check if login is correct
+#*   do stuff if its correct or not
+#*       say hello with users name if correct
+#* register:
+#*   say if register was sucsess
+#* add more users for testing
+#* make sure nothing is printed to console
+
 def login():
     global logWin
     logWin = Toplevel()
@@ -21,8 +31,10 @@ def login():
     global usernameEntryLog
     global passwordEntryLog
 
-    usernameEntryLog = Entry(logWin).grid(row=1, column=1)
-    passwordEntryLog = Entry(logWin).grid(row=2, column=1)
+    usernameEntryLog = Entry(logWin)
+    usernameEntryLog.grid(row=1, column=1)
+    passwordEntryLog = Entry(logWin)
+    passwordEntryLog.grid(row=2, column=1)
 
     loginButton = Button(logWin, text="Login", width="35", command=loginDB)
     loginButton.grid(row=5, column=0, columnspan=2, pady=10)
@@ -33,14 +45,39 @@ def loginDB():
     db = sqlite3.connect(currDir+"/accounts.db")
     c = db.cursor()
 
-    c.execute("SELECT * FROM accounts WHERE username = " + usernameEntryLog.get())
-    account = c.fetchone()
+    c.execute("SELECT * FROM accounts")
+    accounts = c.fetchall()
 
-    print(account)
+    accountFound = False
+
+    for account in accounts:
+        if usernameEntryLog.get() == account[0]:
+            if passwordEntryLog.get() == account[1]:
+                accountFound = True
+                logWin.destroy()
+
+                global welcomeWin
+                welcomeWin = Toplevel()
+                welcomeWin.title("Welcome")
+                welcomeWin.geometry("300x250")
+                
+                titleText = Label(welcomeWin, text="Welcome", width="33", bg="grey",  height="2", font=("Calibri", 13))
+                titleText.grid(row=0, column=0, pady=(0,10))
+
+                Label(welcomeWin, text=f"Welcome {account[2]} {account[3]}!").grid(row=1, column=0, pady=5)
+                Label(welcomeWin, text="You are now logged in").grid(row=2, column=0, pady=5)
+
+                Button(welcomeWin, text="Log out", command=logout).grid(row=3, column=0)
+
+    if not accountFound:
+        messagebox.showerror(title="Login", message="Incorrect username or password")
 
     # Close DB
     db.commit()
     db.close()
+
+def logout():
+    welcomeWin.destroy()
 
 def register():
     global regWin
@@ -78,12 +115,12 @@ def registerDB():
     db = sqlite3.connect(currDir+"/accounts.db")
     c = db.cursor()
 
-    print(usernameEntryReg.get())
+    # print(usernameEntryReg.get())
 
     c.execute("SELECT * FROM accounts")
     accounts = c.fetchall()
 
-    print(accounts)
+    # print(accounts)
 
     usernameTaken = False
 
@@ -101,6 +138,7 @@ def registerDB():
                 "lname": lnameEntryReg.get()
             })
 
+    messagebox.showinfo(title="Register", message="Registration was a success!")
     regWin.destroy()
 
     # Close DB
@@ -122,27 +160,37 @@ def show():
     global accounts
     accounts = c.fetchall()
 
-    print(accounts)
-
     usernames = []
 
     for account in accounts:
         usernames.append(account[0])
 
-    print(usernames)
-
     clicked = StringVar()
     clicked.set(usernames[0])
 
     drop = OptionMenu(showWin, clicked, *usernames, command=dropdown).grid(row=0, column=0, columnspan=2, pady=10)
+    
+    Label(showWin, text="Username", bg="#949494", width=10, height=1).grid(row=1, column=0, pady=5)
+    Label(showWin, text="Password", bg="#949494", width=10, height=1).grid(row=2, column=0, pady=5)
+    Label(showWin, text="First name", bg="#949494", width=10, height=1).grid(row=3, column=0, pady=5)
+    Label(showWin, text="Last name", bg="#949494", width=10, height=1).grid(row=4, column=0, pady=5)
+
+    Label(showWin, text=accounts[0][0], bg="#bebebe", width=20, height=1).grid(row=1, column=1, pady=5, padx=5)
+    Label(showWin, text=accounts[0][1], bg="#bebebe", width=20, height=1).grid(row=2, column=1, pady=5, padx=5)
+    Label(showWin, text=accounts[0][2], bg="#bebebe", width=20, height=1).grid(row=3, column=1, pady=5, padx=5)
+    Label(showWin, text=accounts[0][3], bg="#bebebe", width=20, height=1).grid(row=4, column=1, pady=5, padx=5)
 
     # Close DB
     db.commit()
     db.close()
 
 def dropdown(var):
-    print(var)
-    Label(showWin, text="Username").grid(row=1, column=1)
+    for account in accounts:
+        if var == account[0]:
+            Label(showWin, text=account[0], bg="#bebebe", width=20, height=1).grid(row=1, column=1, pady=5, padx=5)
+            Label(showWin, text=account[1], bg="#bebebe", width=20, height=1).grid(row=2, column=1, pady=5, padx=5)
+            Label(showWin, text=account[2], bg="#bebebe", width=20, height=1).grid(row=3, column=1, pady=5, padx=5)
+            Label(showWin, text=account[3], bg="#bebebe", width=20, height=1).grid(row=4, column=1, pady=5, padx=5)
 
 Label(root, text="Account manager", bg="grey", width="300", height="2", font=("Calibri", 13)).pack()
 Label(root, text="").pack()
