@@ -137,8 +137,8 @@ def registerDB():
                 "fname": fnameEntryReg.get(),
                 "lname": lnameEntryReg.get()
             })
-
-    messagebox.showinfo(title="Register", message="Registration was a success!")
+        messagebox.showinfo(title="Register", message="Registration was a success!")
+        
     regWin.destroy()
 
     # Close DB
