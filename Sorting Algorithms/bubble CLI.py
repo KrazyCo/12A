@@ -2,15 +2,15 @@ import random
 import time
 import sys
 
-maxNum = 5
+maxNum = 49
 
-sortList = [3,6,1,4,2]
+# sortList = [3,6,1,4,2]
 
-# numbers = range(1, maxNum+1)
-# sortList = []
-# for number in numbers:
-#     sortList.append(number)
-# random.shuffle(sortList)
+numbers = range(1, maxNum+1)
+sortList = []
+for number in numbers:
+    sortList.append(number)
+random.shuffle(sortList)
 
 swapped = True
 passNum = 0
@@ -32,7 +32,7 @@ while swapped:
                 else:
                     textToPrint+=" "+str(sortList[e])+"  "
             sys.stdout.write("\r"+textToPrint)
-            sys.stdout.write("\n")
+            # sys.stdout.write("\n")
             sys.stdout.flush()
             time.sleep(0.02)
     sys.stdout.write("\n")
