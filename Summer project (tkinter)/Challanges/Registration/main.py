@@ -160,6 +160,8 @@ def show():
     global accounts
     accounts = c.fetchall()
 
+    print(accounts)
+
     usernames = []
 
     for account in accounts:
