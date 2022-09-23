@@ -1,6 +1,6 @@
 import sqlite3
 from pathlib import Path
-import pandas as pd
+from tabulate import tabulate
 
 
 def showAllFilms():
@@ -27,7 +27,7 @@ if __name__ == "__main__":
         "==============\n"
         "")
     while exit == False:
-        userInput = input("Please select an option\n"
+        userInput = int(input("Please select an option\n"
                     "\n"
                     "1 - Add a new film\n"
                     "2 - Delete a film\n"
@@ -35,7 +35,7 @@ if __name__ == "__main__":
                     "4 - Find films by year\n"
                     "5 - Exit\n"
                     "\n"
-                    ">>> ")
+                    ">>> "))
         match userInput:
             case 1:
                 print("1")
@@ -43,9 +43,7 @@ if __name__ == "__main__":
                 pass
             case 3:
                 films = showAllFilms()
-                output = pd.json_normalize(films)
-                print(output)
-                print(films)
+                print(tabulate(films, headers=["ID", "Title", "Year"]))
             case 4:
                 pass
             case 5:
