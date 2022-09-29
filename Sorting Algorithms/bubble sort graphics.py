@@ -3,10 +3,11 @@ import pygame, sys
 from pygame.locals import *
 import random
 
-width = 1280
+width = 1920
 height = 720
-numbers = 200
+numbers = 1000
 delay = 1
+spacing = 0 # should be 2 for correct spacing, for larger lists make it smaller to fit onto screen
 
 numList = range(1, numbers+1)
 sortList = []
@@ -37,12 +38,12 @@ while True:
         display.fill((255,255,255))
         for count, num in enumerate(sortList):
             if count == currentIndex or count == currentIndex+1:
-                left = count*(barWidth+2)+10
+                left = count*(barWidth+spacing)+10
                 top = height-20-(trunc(max(num*heghtMultiplier,1)))
                 barHeight = max(num*heghtMultiplier,1)
                 pygame.draw.rect(display,(0,255,0),(left,top,barWidth,barHeight))
             else:
-                left = count*(barWidth+2)+10
+                left = count*(barWidth+spacing)+10
                 top = height-20-(trunc(max(num*heghtMultiplier,1)))
                 barHeight = max(num*heghtMultiplier,1)
                 pygame.draw.rect(display,(0,0,255),(left,top,barWidth,barHeight))
