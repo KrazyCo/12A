@@ -6,13 +6,8 @@ import random
 width = 1280
 height = 720
 numbers = 200
-<<<<<<< HEAD
-delay = 1
-spacing = 2 # should be 2 for correct spacing, for larger lists make it smaller to fit onto screen
-=======
 delay = 10
 spacing = 1 # should be 2 for correct spacing, for larger lists make it smaller to fit onto screen
->>>>>>> 26080e79714a22fa86cdd2d654dad22ebda83048
 
 numList = range(1, numbers+1)
 sortList = []
