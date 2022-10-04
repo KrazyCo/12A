@@ -5,9 +5,9 @@ import random
 
 width = 1280
 height = 720
-numbers = 200
+numbers = 1000
 delay = 10
-spacing = 1 # should be 2 for correct spacing, for larger lists make it smaller to fit onto screen
+spacing = 0 # should be 1 for correct spacing, for larger lists make it smaller to fit onto screen
 
 numList = range(1, numbers+1)
 sortList = []
@@ -19,7 +19,7 @@ random.shuffle(sortList)
 pygame.init()
 display=pygame.display.set_mode((width,height))
 
-barWidth = max((width-40)/numbers-1,1)
+barWidth = max((width-40)/numbers-spacing,1)
 heghtMultiplier = (height-40)/numbers
 
 swapped = True
