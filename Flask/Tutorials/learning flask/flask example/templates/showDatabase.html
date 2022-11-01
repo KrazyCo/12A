@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Movies Database Flask Example</title>
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+    <!-- heading  -->
+    <div id="headingBar">
+      <h1 id="heading"><center>All Movies in Database</center></h1>
+      <div id="navBar">
+        <ul>
+          <li><a href="/">Home Page</a></li>
+          <li  class="selected"  ><a href="/showdatabase">Show Databas</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content">
+      <br><br>
+      <table>
+        <tr>
+          <th>Film ID</th>
+          <th>Film Name</th>
+          <th>Year of Release</th>
+        </tr>
+         {% for row in output %}
+        <tr>
+          <td>{{row[0]}}</td>
+          <td>{{row[1]}}</td>
+          <td>{{row[2]}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    <br><br>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Movies Database Flask Example</title>
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+    <!-- heading  -->
+    <div id="headingBar">
+      <h1 id="heading"><center>Movies Database Flask Example site</center></h1>
+      <div id="navBar">
+        <ul>
+          <li class="selected" ><a href="/">Home Page</a></li>
+          <li                  ><a href="/showdatabase">Show Database</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content">
+      <br><br>
+      <p>Database info: Table name is Film with attributes: FilmID, Title and releaseYear</p>
+      <p>Enter the SQL you would like to run in the space below</p>
+          <form method = "POST">
+      <input class="singlebutton" type="text" name="sql" placeholder="Input your SQL">
+
+      <Button onClick="" class="singlebutton" type="submit" name="submit">Submit</Button>
+       <ul>
+            {% for row in output %}
+                <li>{{row[1]}} - {{row[2]}}</li>
+            {% endfor %}
+        </ul>
+        {{ errorMessage }}
+          </form>
+    <br><br>
+    </div>
+  </body>
+</html>
