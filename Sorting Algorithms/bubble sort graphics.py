@@ -5,9 +5,9 @@ import random
 
 width = 1280
 height = 720
-numbers = 1000
+numbers = 200
 delay = 10
-spacing = 0 # should be 1 for correct spacing, for larger lists make it smaller to fit onto screen
+spacing = 1 # should be 1 for correct spacing, for larger lists make it smaller to fit onto screen
 
 numList = range(1, numbers+1)
 sortList = []
