@@ -13,7 +13,6 @@ def quicksort(array):
             leftArray.append(array[i])
         else:
             rightArray.append(array[i])
-    # print(f"{type([pivot]) = }")
     array = quicksort(leftArray) + [pivot] + quicksort(rightArray)
     return array
 
