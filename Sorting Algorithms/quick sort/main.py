@@ -1,20 +1,11 @@
 def quicksort(array):
-    if len(array) <= 1:
-        return array
-
-    pivot = array[0]
-    array.pop(0)
-
-    leftArray = []
-    rightArray = []
-
-    for i in range(0,len(array)):
-        if array[i] <= pivot:
-            leftArray.append(array[i])
-        else:
-            rightArray.append(array[i])
-    array = quicksort(leftArray) + [pivot] + quicksort(rightArray)
-    return array
+    if len(array) <= 1: return array
+    pivot = array.pop(0)
+    leftArray, rightArray = [], []
+    for i in range(0,len(array)): 
+        if array[i] <= pivot: leftArray.append(array[i]) 
+        else: rightArray.append(array[i])
+    return quicksort(leftArray) + [pivot] + quicksort(rightArray)
 
 if __name__ == "__main__":
     # test code
