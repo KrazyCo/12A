@@ -16,4 +16,4 @@ if __name__ == "__main__":
                 [1, 18, 7, 9, 8, 4, 2, 6, 0, 14, 19, 16, 11, 12, 15, 5, 13, 17, 3, 10]]
 
     for array in testarrs:
-        print(array, "-->", quicksort(array))
+        print(array, "-->", quicksort(array.copy()))
