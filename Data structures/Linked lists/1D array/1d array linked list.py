@@ -6,8 +6,6 @@ startPointer = 6
 
 end = False
 currentPointer = startPointer
-while end == False:
+while currentPointer != -1:
     print(names[currentPointer])
     currentPointer = pointers[currentPointer]
-    if startPointer == -1:
-        end = True
