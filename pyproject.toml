@@ -9,6 +9,7 @@ python = "^3.8"
 guizero = "^1.2.0"
 Flask = "^2.0.2"
 pygame = "^2.1.0"
+PyQt5 = "^5.15.7"
 
 [tool.poetry.dev-dependencies]
 

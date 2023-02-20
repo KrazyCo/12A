@@ -12,6 +12,7 @@ tree = [[4,  "Alex", 1],        # 0
         [-1, "Arun", -1]]       # 10
 startNode = 0
 
+# procedural
 # in-order proceduarl
 def inOrderTraversalProcedural(currentNode):
     if tree[currentNode][0] != -1:
@@ -44,3 +45,46 @@ preOrderTraversalProcedural(0)
 
 print("\nPost-order procedural")
 postOrderTraversalProcedural(0)
+print("h")
+# object oriented
+class Node:
+	def __init__(self, name):
+		self.__name = name
+	
+	def setLeft(self, left):
+		self.__left = left
+
+	def setRight(self, right):
+		self.__right = right
+
+	def getLeft(self):
+		return self.__left
+
+	def getRight(self):
+		return self.__right
+
+	def getName(self):
+		return self.__name
+
+oopTree = []
+
+for i in range(len(tree)):
+	oopTree.append(Node(tree[i][1]))
+
+for i in range(len(tree)):
+	if tree[i][0] != -1:
+		oopTree[i].setLeft(oopTree[tree[i][0]])
+	if tree[i][2] != -1:
+		oopTree[i].setRight(oopTree[tree[i][2]])
+
+def inOrderOOP(currentNode):
+	if currentNode.getLeft():
+		inOrderOOP(currentNode.getLeft())
+	print(currentNode.getName())
+	if currentNode.getRight():
+		inOrderOOP(currentNode.getRight())
+# print("what")
+# print(oopTree[0].getLeft().getName())
+# print(oopTree[10].getLeft().getName())
+
+inOrderOOP(oopTree[startNode])
