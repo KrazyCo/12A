@@ -45,7 +45,7 @@ preOrderTraversalProcedural(0)
 
 print("\nPost-order procedural")
 postOrderTraversalProcedural(0)
-print("h")
+
 # object oriented
 class Node:
 	def __init__(self, name):
@@ -72,19 +72,35 @@ for i in range(len(tree)):
 	oopTree.append(Node(tree[i][1]))
 
 for i in range(len(tree)):
-	if tree[i][0] != -1:
-		oopTree[i].setLeft(oopTree[tree[i][0]])
-	if tree[i][2] != -1:
-		oopTree[i].setRight(oopTree[tree[i][2]])
+    oopTree[i].setLeft(oopTree[tree[i][0]] if tree[i][0] != -1 else None)
+    oopTree[i].setRight(oopTree[tree[i][2]] if tree[i][2] != -1 else None)
 
 def inOrderOOP(currentNode):
-	if currentNode.getLeft():
-		inOrderOOP(currentNode.getLeft())
+	if currentNode.getLeft(): inOrderOOP(currentNode.getLeft())
 	print(currentNode.getName())
-	if currentNode.getRight():
-		inOrderOOP(currentNode.getRight())
-# print("what")
-# print(oopTree[0].getLeft().getName())
-# print(oopTree[10].getLeft().getName())
+	if currentNode.getRight(): inOrderOOP(currentNode.getRight())
+        
+def preOrderOOP(currentNode):
+	print(currentNode.getName())
+	if currentNode.getLeft(): preOrderOOP(currentNode.getLeft())
+	if currentNode.getRight(): preOrderOOP(currentNode.getRight())
+        
+def postOrderOOP(currentNode):
+	if currentNode.getLeft(): postOrderOOP(currentNode.getLeft())
+	if currentNode.getRight(): postOrderOOP(currentNode.getRight())
+	print(currentNode.getName())
 
+# for i in range(len(tree)):
+#     print(f"{i}: {oopTree[i].getName()}")
+#     print(f"Left: {oopTree[i].getLeft().getName() if oopTree[i].getLeft() else None}")
+#     print(f"Right: {oopTree[i].getRight().getName() if oopTree[i].getRight() else None}")
+#     print()
+
+print("\nIn-order object oriented")
 inOrderOOP(oopTree[startNode])
+
+print("\nPre-order object oriented")
+preOrderOOP(oopTree[startNode])
+
+print("\nPost-order object oriented")
+postOrderOOP(oopTree[startNode])
