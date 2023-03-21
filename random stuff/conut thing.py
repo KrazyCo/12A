@@ -10,7 +10,7 @@
 
 number = 2
 
-for i in range(0,410000):
+for i in range(0,4100):
     number = number * 2
 
 print(number)
@@ -18,7 +18,7 @@ print(len(str(number)))
 
 # number = 2
 
-# for i in range(0,30): # this loop will never finish lmao
+# for i in range(0,20): # this loop will never finish lmao
 #     number = number * number
 #     print(number)
 #     print(f"{i = }")
