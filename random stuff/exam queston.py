@@ -7,3 +7,8 @@ class House(Building):
         self.__bedrooms = pBedrooms
         self.__bathrooms = pBathrooms
 
+
+class node:
+    def __init__(self, newData, newPointer):
+        self.__data = newData
+        self.__pointer = newPointer
